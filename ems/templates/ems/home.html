@@ -1,5 +1,6 @@
-
-  <div>
+{% extends "ems/base.html" %}
+{% block content %}  
+<div>
       {% for employee in employees %} 
       <div class="employee_name"> 
       <h3>
@@ -20,3 +21,4 @@
         
       {% endfor %}
   </div>
+  {% endblock content %}
