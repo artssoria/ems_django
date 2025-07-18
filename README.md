@@ -74,5 +74,3 @@ Este proyecto es una aplicación web desarrollada con Django para gestionar empl
 Puedes modificar los modelos en [`ems/models.py`](ems/models.py) y las vistas en [`ems/views.py`](ems/views.py) para adaptar la aplicación a tus necesidades.
 
 ---
-
-¿Dudas? Consulta la documentación oficial de
