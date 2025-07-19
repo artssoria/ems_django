@@ -1,24 +1,19 @@
 {% extends "ems/base.html" %}
-{% block content %}  
-<div>
-      {% for employee in employees %} 
-      <div class="employee_name"> 
-      <h3>
-        <a href="{% url 'employee_detail' employee.id %}">
-          
-        {{ employee.first_name|capfirst }} 
-        {{ employee.last_name|capfirst }}
-        </a>
-      </h3>
-      <p>{{ employee.email_id }}</p>
-      <span> <strong>
-        {% for job in employee.jobs.all %}
-        {{ job.name }}{% if not forloop.last %}, {% endif %}
-        {% endfor %}
-        </strong>
-      </span>
+{% block content %}
+
+<div class="row mt-4">
+  {% for employee in employees %}
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-header">
+          {{ employee.first_name|capfirst }} {{ employee.last_name|capfirst }}
+        </div> 
+        <div class="card-body">
+          <p>{{ employee.email_id }}</p>  
+        </div>
       </div>
-        
-      {% endfor %}
-  </div>
-  {% endblock content %}
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}

@@ -3,24 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Employee database</title>
+    <title>Employees database</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-     <div class="container mt-5">
+    <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <h1> Employees database</div>
-                
+            <div class="col-md-6 text-center">
+                <h1>Base de datos de empleados</h1>
+                <hr>
+                <h3 class="fs-6 text-dark">
+                    La mejor manera de manejar los datos de los empleados
+                </h3>
             </div>
         </div>
-        <div class="row">
-            {%  block content %}
-            
-            {% endblock content%}
-            
-        </div>
+
+        {% block content %}
+        {% endblock content %}
+        
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
