@@ -1,21 +1,35 @@
-<div>
+{% extends "ems/base.html" %}
+{% block content %}
 
-    <h3><strong>Nombre :</strong> {{ employee.first_name|capfirst }} {{ employee.last_name|capfirst }}</h3>
-    <p><strong>Email:</strong> {{ employee.email_id }}</p>
-    <p><strong>Teléfono: </strong>{{ employee.phone_number }}</p>
-    <p><strong>Dirección:</strong> {{ employee.address }}</p>
-    <p><strong>Género:</strong> {{ employee.gender }}</p>
-    <p><strong>Fecha de nacimiento:</strong> {{ employee.dob }}</p>
-    <p><strong>Inscripción:</strong> {{ employee.joining_date }}</p>
-    <p><strong>Especialidades: </strong>
-        {% if employee.jobs.all %}
-            {% for job in employee.jobs.all %}
-                {% if not forloop.first %}, {% endif %}
-                <span>{{ job.name }}</span>
-            {% endfor %}
-        {% else %}
-            <span>No tiene especialidades.</span>
-        {% endif %}
-    </p>
+<div class="col-md-6">
+    <div class="card mb-5">
+        <div class="card-header">Detalles del empleado</div>
+        <div class="card-body">
+            <h2><strong>Nombre :</strong> {{ employee.first_name|capfirst }} {{ employee.last_name|capfirst }}</h2>
+            <hr>
+            <p><strong>Email: </strong><span class="text-success">{{ employee.email_id }}</span></p>
+            <p><strong>Teléfono: </strong><span class="text-success">{{ employee.phone_number}}</span></p>
+            <p><strong>Dirección: </strong><span class="text-success">{{ employee.address}}</span></p>
+            <p><strong>Género: </strong><span class="text-success">{{ employee.gender}}</span></p>
+            <p><strong>Fecha de nacimiento: </strong><span class="text-success">{{ employee.dab}}</span></p>
+            <p><strong>Inscripción: </strong><span class="text-success">{{ employee.joining_date}}</span></p>
+            <p><strong>Especialidades: </strong> <span class="text-success">
+                    {% if employee.jobs.all %}
+                    <ul class="list-group">
 
+                        {% for job in employee.jobs.all %}
+                        <li class="list-group-item"><span>{{ job.name }}</span></li>
+                        
+                        
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <span>No tiene especialidades.</span>
+                    {% endif %}
+            </p>
+            </span>
+        </div>
+    </div>
 </div>
+
+{% endblock content %}
