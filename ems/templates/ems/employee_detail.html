@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="col-md-6">
-    <div class="card mb-5">
+    <div class="card mb-5 slow-hover">
         <div class="card-header">Detalles del empleado</div>
         <div class="card-body">
             <h2><strong>Nombre :</strong> {{ employee.first_name|capfirst }} {{ employee.last_name|capfirst }}</h2>
@@ -28,6 +28,9 @@
                     {% endif %}
             </p>
             </span>
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'home' %}" class="btn btn-sm btn-primary">volver al inicio</a>
         </div>
     </div>
 </div>

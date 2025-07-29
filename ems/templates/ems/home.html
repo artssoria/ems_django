@@ -4,7 +4,7 @@
 <div class="row justify-content-center">
   {% for employee in employees %}
   <div class="col-md-4 mb-4">
-    <a class="card text-decoration-none text-black" href="{% url 'employee_detail' employee.id %}">
+    <a class="card text-decoration-none text-black slow-hover" href="{% url 'employee_detail' employee.id %}">
       <div class="card-body text-center p-4 text-black">
         <h5 class="card-header">{{ employee.first_name|capfirst }} {{ employee.last_name|capfirst }}</h5>
         <p class="card-body">{{ employee.email_id }}</p>
@@ -15,8 +15,8 @@
               <li>{{ specialty.name|capfirst }}</li>
             {% endfor %}
           </ul>
+          </div>
         </div>
-      </div>
     </a>
   </div>
   {% endfor %}
